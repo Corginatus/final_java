@@ -1,6 +1,6 @@
 package app.model;
 
-import app.entities.User;
+import app.entities.Rate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class Model {
     private static Model instance = new Model();
 
-    private List<User> model;
+    private List<Rate> model;
 
     public static Model getInstance() {
         return instance;
@@ -19,13 +19,13 @@ public class Model {
         model = new ArrayList<>();
     }
 
-    public void add(User user) {
+    public void add(Rate user) {
         model.add(user);
     }
 
     public List<String> list() {
         return model.stream()
-                .map(User::getName)
+                .map(Rate::getName)
                 .collect(Collectors.toList());
     }
 }
